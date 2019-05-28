@@ -8,33 +8,33 @@ https://item.taobao.com/item.htm?id=581055502939
 Use ESP-idf + Arduino to build this project with configuration:
 M5Stack-Core-ESP32, QIO, 80MHz, No OTA (Large APP), 921600, Verbose
 
-以下是例程 StickWatch.ino 的路径
+StickWatch.ino 파일의 경로
 
 <img src="images/path.jpg">
 
-### 在编译 StickWatch.ino 之前，先做以下配置
+### StickWatch.ino 컴파일전에 다음과 같은 설정이 필요함.
 
-**1. 为了避免"项目太大了"失败的问题，需要在Arduino IDE中选择菜单栏中的工具->Partition Scheme->Large App No OTA.**
+**1. Arduino IDE에서 Tools -> Partition Scheme -> Large App No OTA를 선택**
 
-**2. 依赖库（在 Arduino IDE 的板管理上安装以下依赖库）：**
+**2. 다음의 라이브러리의 설치가 필요함**
 - Wifi
 <img src="images/library_wifi.png">
 - ArduinoJson (6.2.0-beta as local dependancy)
 <img src="images/library_arduinojson.png">
 
-**3. 配置 WIFI**
+**3. WIFI 설정**
 
-为了能正常显示时间，需要配置 WIFI。
+시간을 올바르게 표시하려면 WIFI를 구성해야 함.
 
-打开 config.h 文件，修改第5、6行，修改成您的wifi账号和密码
+config.h 파일을 열고 라인 5와 6을 수정하고 wifi 계정과 암호로 변경하십시오.
 
 ```arduino
 // user configurable variables start
 const char* BUILTIN_WIFI_SSID      = "Your WIFI ssid";
 const char* BUILTIN_WIFI_PASSWORD  = "********";
 ```
-然后打开 StickWatch.ino，编译下载
+그런 다음 StickWatch.ino을 컴파일하고 다운로드.
 
-### 注意
+### 주의
 
-成功烧录后，Stick 上显示的温度和电压数值都是不可以用，因为没有 Stick 中对应的硬件电路支持
+스틱에 해당 하드웨어 회로가 지원되지 않으므로 스틱에 표시된 온도 및 전압 값을 프로그래밍 할 수 없으면 사용할 수 없습니다.
